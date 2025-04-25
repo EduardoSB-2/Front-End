@@ -1,0 +1,19 @@
+nav{
+    background-color: rgb(54, 0, 204);
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;
+    width: 100%;
+}
+
+nav a{
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 4vh;
+    font-family: "Comic Sans MS";
+}
+
