@@ -13,9 +13,9 @@
         <label>Gênero:</label>
         <select name="genero" [(ngModel)]="genero">
             <option value="">Selecione</option>
-            <option value="feminino">Feminino</option>
-            <option value="masculino">Masculino</option>
-            <option value="outro">Outro</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Outro">Outro</option>
         </select>
         <br>
         <label for="">Idade</label>
@@ -24,7 +24,18 @@
         <label>Profissão:</label>
         <input type="text" name="profissao" [(ngModel)]="profissao">
         <br>
+
     </form>
+    <br>
+    <button type="button" (click)="limparDados()">Limpar</button>
+    <br>
+<br>
+    <button type="button" (click)="validacao()">Validar</button>
+
+    <br>
+    <br>
+    <button type="button" (click)="enviarFormulario()">Enviar</button>
+
     <br>
     <hr>
     <br>
