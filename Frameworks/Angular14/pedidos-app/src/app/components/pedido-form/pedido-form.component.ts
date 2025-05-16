@@ -24,7 +24,7 @@ export class PedidoFormComponent {
 
   selecionarProduto(id: string) {
     const index = this.produtoSelecionadoId.indexOf(id);
-    if (index >= 0) {
+    if (index>=0) {
       this.produtoSelecionadoId.slice(index, 1);
     } else {
       this.produtoSelecionadoId.push(id);

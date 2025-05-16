@@ -3,14 +3,14 @@
 <label for="">Cliente</label>
 <select [(ngModel)]="clienteSelecionadoId">
     <option value="">Selecione um Cliente</option>
-<option *ngFor = "let cliente of clientes" value="cliente.id">{{cliente.nome}}</option>
+<option *ngFor = "let cliente of clientes" [value]="cliente.id">{{cliente.nome}}</option>
 </select>
 
 <h3>Produtos</h3>
 <div *ngFor ="let produto of produtos">
     <label for="">
-        <input type="checkbox" [value]="produto.id" (change)="selecionarProduto(produto.id.toString())"/>{{produto.nome}} - R${{produto.preco}}
-        {{produto.nome}} - R$ {{produto.preco}}
+        <input type="checkbox" [value]="produto.id" (change)="selecionarProduto(produto.id.toString())"/>
+        {{produto.nome}} - R${{produto.preco}}
     </label>
 </div>
 
