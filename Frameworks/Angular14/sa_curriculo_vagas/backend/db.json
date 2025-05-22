@@ -1,13 +1,6 @@
 {
   "vagas": [
     {
-      "id": "1",
-      "nome": "Desenvolver FrontEnd Jr",
-      "foto": "foto1.jpg",
-      "descricao": "Trabalhar com HTML, CSS e JS",
-      "salario": 4000
-    },
-    {
       "id": "2",
       "nome": "Desenvolver BackEnd Pleno",
       "foto": "foto2.jpg",
@@ -22,11 +15,14 @@
       "salario": 10000
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Gerente de Nuvem",
       "foto": "Foto4.jpg",
       "descricao": "Vaga de Gerente de Nuvem",
       "salario": 8500
     }
+  ],
+  "curriculos": [
+    
   ]
 }

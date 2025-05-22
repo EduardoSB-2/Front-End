@@ -11,7 +11,8 @@ import { FooterComponent } from './template/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { PainelVagasComponent } from './view/painel-vagas/painel-vagas.component';
-import { FormsFormsModule } from '@angular/forms'; // Importando o FormsModule
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsFormsModule } from '@angular/forms'; // Importando o FormsModule
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsFormsModule
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
