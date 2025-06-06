@@ -31,35 +31,40 @@ export class PainelVagasComponent implements OnInit {
   //cadastrar nova vaga
 
   cadastrar() {
-    this._vagasService.cadastrarVaga(this.vaga).subscribe(
-      () => {
+    this._vagasService.cadastrarVaga(this.vaga).subscribe({
+      next: () => {
         this.vaga = new Vaga(0, '', '', '', 0);
         this.listarVagas();
       },
-      (err) => {
+      error: (err) => {
         console.error('Erro ao Cadastrar', err);
-      }
-    );
+      },
+    });
   }
 
   //atualizar nova vaga
   atualizar(id: number) {
-    this._vagasService.atualizarVaga(id, this.vaga).subscribe(
+    this._vagasService.atualizarVaga(id, this.vaga).subscribe({
+      next:
       () => {
         this.vaga = new Vaga(0, '', '', '', 0);
         this.listarVagas();
       },
-      (err) => {
+      error:(err) => {
         console.error('Erro ao Atualizar', err);
       }
-    );
+  });
   }
 
   //deletar vaga
   excluir(id: number) {
-    this._vagasService.removerVaga(id).subscribe(
-      () => {this.listarVagas();},
-      (err) => {console.error("Erro ao Deletar", err)}
-    )
+    this._vagasService.removerVaga(id).subscribe({
+      next: () => {
+        this.listarVagas();
+      },
+      error: (err) => {
+        console.error('Erro ao Deletar', err);
+      }
+  });
   }
 }

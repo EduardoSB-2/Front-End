@@ -10,7 +10,7 @@ import { VagaService } from 'src/app/service/vaga.service';
 export class VagasComponent implements OnInit{
   public vagas: Vaga[] = []; // vetor para armazenar as vagas
 
-  constructor(private _vagaservice: VagaService) {}
+  constructor(private _vagaService: VagaService) {}
   //injetando o serviço de vagas no construtor do componente
 
   ngOnInit(): void {
@@ -18,13 +18,13 @@ export class VagasComponent implements OnInit{
   }
 
   listarVagas(){
-    this._vagaservice.getVagas().subscribe(
+    this._vagaService.getVagas().subscribe(
       (retornaVaga) => {
         //mapear os dados da API
         this.vagas = retornaVaga.map(
         (item) => Vaga.fromMap(item)
         );}
       );}
-
+      
   }
 

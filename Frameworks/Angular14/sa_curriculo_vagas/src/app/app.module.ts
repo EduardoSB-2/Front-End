@@ -12,7 +12,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { PainelVagasComponent } from './view/painel-vagas/painel-vagas.component';
 import { FormsModule } from '@angular/forms';
-
+import { CurriculoListComponent } from './view/curriculo-list/curriculo-list.component';
+import { CurriculoFormComponent } from './view/curriculo-form/curriculo-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { FormsModule } from '@angular/forms';
     VagasComponent,
     HeaderComponent,
     FooterComponent,
-    PainelVagasComponent
+    PainelVagasComponent,
+    CurriculoListComponent,
+    CurriculoFormComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,6 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     HttpClientModule,
     FormsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

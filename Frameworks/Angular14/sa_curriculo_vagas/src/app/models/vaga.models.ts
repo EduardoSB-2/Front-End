@@ -35,13 +35,13 @@ export class Vaga {
       nome: this.nome,
       foto: this.foto,
       descricao: this.descricao,
-      salario: this.salario,
-    };
+      salario: this.salario
+    }
   }
 
   //fromMap() BD -> obj
 
   static fromMap(map: any): Vaga {
     return new Vaga(map.id, map.nome, map.foto, map.descricao, map.salario);
-  }
+  };
 }
