@@ -1,1 +1,29 @@
-<p>curriculo-form works!</p>
+<h2>Cadastrar Currículo</h2>
+<form>
+  <label>Nome</label>
+  <input type="text" [(ngModel)]="curriculo.nome" name="nome" required /><br />
+
+  <label>Idade</label>
+  <input type="number" [(ngModel)]="curriculo.idade" name="idade" required /><br />
+
+  <label>Gênero</label>
+  <input type="text" [(ngModel)]="curriculo.genero" name="genero" /><br />
+
+  <label>Email</label>
+  <input type="email" [(ngModel)]="curriculo.email" name="email" required /><br />
+
+  <label>Telefone</label>
+  <input type="number" [(ngModel)]="curriculo.telefone" name="telefone" /><br />
+
+  <label>Habilidades</label>
+  <input type="text" [(ngModel)]="curriculo.habilidades" name="habilidades" /><br />
+
+  <label>Experiência</label>
+  <input type="text" [(ngModel)]="curriculo.experiencia" name="experiencia" /><br />
+
+  <label>Formação</label>
+  <input type="text" [(ngModel)]="curriculo.formacao" name="formacao" /><br />
+
+  <button type="button" (click)="cadastrar()">Cadastrar Currículo</button>
+
+</form>

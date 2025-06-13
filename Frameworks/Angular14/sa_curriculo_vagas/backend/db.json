@@ -7,14 +7,13 @@
       "descricao": "Trabalhar com HTML, CSS e JS",
       "salario": 4000
     },
-{
+    {
       "id": "2",
       "nome": "Desenvolver BackEnd Pleno",
       "foto": "foto2.jpg",
       "descricao": "Trabalhar com Desenvolvimento Web",
       "salario": 7000
     },
-
     {
       "id": "3",
       "nome": "Desenvolver Fullstack Senior",
@@ -28,9 +27,92 @@
       "foto": "Foto4.jpg",
       "descricao": "Vaga de Gerente de Nuvem",
       "salario": 8500
+    },
+    {
+      "id": 0,
+      "nome": "dede",
+      "foto": "",
+      "descricao": "de",
+      "salario": "0ded"
     }
   ],
   "curriculos": [
-
+    {
+      "id": 0,
+      "nome": "eduardo",
+      "idade": 17,
+      "genero": "Masculino",
+      "email": "edu.silvab753@gmail.com",
+      "telefone": null,
+      "habilidades": "Muitas",
+      "experiencia": "Nenhuma",
+      "formacao": "Sesi - Senai"
+    },
+    {
+      "id": 0,
+      "nome": "roberto",
+      "idade": 25,
+      "genero": "Masculino",
+      "email": "Robertinho@gmail.com",
+      "telefone": null,
+      "habilidades": "Nenhuma",
+      "experiencia": "Repositor de Mercado",
+      "formacao": "harvard"
+    },
+    {
+      "id": 0,
+      "nome": "rg",
+      "idade": 0,
+      "genero": "gr",
+      "email": "r",
+      "telefone": 7,
+      "habilidades": "gr",
+      "experiencia": "gr",
+      "formacao": "gr"
+    },
+    {
+      "id": 0,
+      "nome": "fe",
+      "idade": null,
+      "genero": "fe",
+      "email": "fe",
+      "telefone": null,
+      "habilidades": "fe",
+      "experiencia": "fe",
+      "formacao": "fe"
+    },
+    {
+      "id": 0,
+      "nome": "de",
+      "idade": 7,
+      "genero": "de",
+      "email": "de",
+      "telefone": 322121321,
+      "habilidades": "dee",
+      "experiencia": "frfr",
+      "formacao": "vrvf"
+    },
+    {
+      "id": 9,
+      "nome": "efe",
+      "idade": 0,
+      "genero": "fef",
+      "email": "fef",
+      "telefone": 7,
+      "habilidades": "fef",
+      "experiencia": "fe",
+      "formacao": "efef"
+    },
+    {
+      "id": "dce9",
+      "nome": "k8",
+      "idade": 0,
+      "genero": "ku",
+      "email": "ku",
+      "telefone": 6576,
+      "habilidades": "ju",
+      "experiencia": "juk",
+      "formacao": "u"
+    }
   ]
 }

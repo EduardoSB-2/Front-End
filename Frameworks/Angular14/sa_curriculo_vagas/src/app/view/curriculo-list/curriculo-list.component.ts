@@ -7,31 +7,60 @@ import { CurriculoService } from 'src/app/service/curriculo.service';
   templateUrl: './curriculo-list.component.html',
   styleUrls: ['./curriculo-list.component.scss'],
 })
-export class CurriculosComponent implements OnInit {
-  public curriculo: Curriculo = new Curriculo("", 0, "", "", "", "", "", "");
+export class CurriculoListComponent implements OnInit {
+  public curriculo: Curriculo = new Curriculo("", 0,   "", "", "", "", "", "");
 
   public curriculos: Curriculo[] = [];
   router: any;
 
-  constructor(private _curriculoservice: CurriculoService) {}
+  constructor(private _curriculoService: CurriculoService) {}
 
   ngOnInit(): void {
     this.listarCurriculos();
   }
 
   listarCurriculos() {
-    this._curriculoservice.getCurriculo().subscribe((retornaCurriculo) => {
+    this._curriculoService.getCurriculo().subscribe((retornaCurriculo) => {
       this.curriculos = retornaCurriculo.map((item) => Curriculo.fromMap(item));
-      return new Curriculo(
-        item.nome,
-        item.email,
-        item.telefone,
-        item.idade,
-        item.genero,
-        item.habilidades
-        item.experiencia,
-        item.formacao,
-      )
+    });
+  }
+
+  listarCurriculoUnico(curriculo: Curriculo) {
+    this.curriculo = curriculo;
+  }
+
+  cadastrar(){
+    this._curriculoService.cadastrarCurriculo(this.curriculo).subscribe({
+      next: () => {
+        this.curriculo = new Curriculo("", 0,    "", "", "", "", "", "");
+        this.listarCurriculos();
+      },
+      error: (err) => {
+        console.error('Erro ao Cadastrar', err);
+      },
+    });
+  }
+
+  atualizar(curriculo : Curriculo) {
+    this._curriculoService.atualizarCurriculo(curriculo, this.curriculo).subscribe({
+      next: () => {
+        this.curriculo = new Curriculo("", 0,  "", "", "", "", "", "");
+        this.listarCurriculos();
+      },
+      error: (err) => {
+        console.error('Erro ao Atualizar', err);
+      }
+    });
+  }
+
+  excluir(id: any) {
+    this._curriculoService.removerCurriculo(id).subscribe({
+      next: () => {
+        this.listarCurriculos();
+        },
+        error: (err) => {
+        console.error('Erro ao Deletar', err);
+      }
     });
   }
 }

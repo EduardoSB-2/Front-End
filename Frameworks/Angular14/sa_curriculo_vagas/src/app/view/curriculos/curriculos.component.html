@@ -1,0 +1,19 @@
+<section class="lista-curriculos"><br>
+  <h2>Currículos Cadastrados</h2><br>
+  <a href="" routerLink="/curriculo-form" class="btn-cadastrar">Cadastrar Currículo</a><br><br>
+  <div class="card" *ngFor="let curriculo of curriculos">
+    <div class="card-body">
+      <h5>{{ curriculo.nome }}</h5>
+      <p><b>Idade:</b> {{ curriculo.idade }}</p>
+      <p><b>Gênero:</b> {{ curriculo.genero }}</p>
+      <p><b>Email:</b> {{ curriculo.email }}</p>
+      <p><b>Telefone:</b> {{ curriculo.telefone }}</p>
+      <p><b>Habilidades:</b> {{ curriculo.habilidades }}</p>
+      <p><b>Experiência:</b> {{ curriculo.experiencia }}</p>
+      <p><b>Formação:</b> {{ curriculo.formacao }}</p>
+      <button (click)="deletarCurriculo(curriculo.id)" class="btn-deletar">Deletar</button>
+    </div>
+  </div>
+</section>
+
+<div class="rodape"></div>

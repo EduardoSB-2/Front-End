@@ -1,3 +1,5 @@
+import { map } from "rxjs";
+
 export class Curriculo {
 
   constructor(
@@ -5,15 +7,17 @@ export class Curriculo {
     public idade: number,
     public genero: string,
     public email: string,
-    public telefone: number,
+    public telefone: string,
     public habilidades: string,
     public experiencia: string,
-    public formacao: string){
-  }
+    public formacao: string,
+    public id?: any
+  ){}
 
 toMap(): { [key: string]: any } {
   return {
     nome: this.nome,
+
     idade: this.idade,
     genero: this.genero,
     email: this.email,
@@ -21,6 +25,7 @@ toMap(): { [key: string]: any } {
     habilidades: this.habilidades,
     experiencia: this.experiencia,
     formacao: this.formacao,
+
   };
 }
 
@@ -33,6 +38,9 @@ static fromMap(map: any): Curriculo {
     map.telefone,
     map.habilidades,
     map.experiencia,
-    map.formacao);
+    map.formacao,
+    map.id
+
+  )
 }
 }

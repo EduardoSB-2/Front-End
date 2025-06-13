@@ -1,1 +1,19 @@
-<p>curriculo-list works!</p>
+<section class="lista-curriculos">
+  <h2>Curriculos Cadastrados</h2>
+
+  <div class="card" *ngFor="let curriculo of curriculos">
+    <div class="card-body">
+      <h5>{{ curriculo.nome }}</h5>
+      <p><b>Idade:</b> {{ curriculo.idade }}</p>
+      <p><b>Gênero:</b> {{ curriculo.genero }}</p>
+      <p><b>Email:</b> {{ curriculo.email }}</p>
+      <p><b>Telefone:</b> {{ curriculo.telefone }}</p>
+      <p><b>Habilidades:</b> {{ curriculo.habilidades }}</p>
+      <p><b>Experiência:</b> {{ curriculo.experiencia }}</p>
+      <p><b>Formação:</b> {{ curriculo.formacao }}</p>
+
+    </div>
+  </div>
+</section>
+
+<div class="rodape"></div>
