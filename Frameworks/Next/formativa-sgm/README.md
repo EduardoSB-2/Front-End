@@ -16,7 +16,7 @@ O projeto consiste no desenvolvimento de um Sistema de Gestão de Manutenção (
 
 ## Levantamento de Requistos do Projeto
 
-- ### Requistos Funcionais
+- ### Requisitos Funcionais
 
 - ### Requisitos Não Funcionais
 
@@ -90,3 +90,46 @@ classDiagram
     Equipamento "1"--"1+" OrdemServico: "associada a"
 
 ```
+2. ### Caso de Uso
+Ilustra as interações dos diferentes tipos de usuários (Atores) com as funcionalidades do sistema
+
+- Caso de Uso:
+    - Técnico: Gerenciar Ordens de Serviço (CRUD) e acessar o Dashboard;
+    - Gerente: funções do técnico + Gerenciamento de Equipamentos (CRUD);
+    - Admin: Gerenciar Usuários do Sistema, acessar o Dashboard
+
+    Fazer o login -> Antes de Qualquer Ação
+
+```mermaid
+
+graph TD
+
+    subgraph "SGM"
+        caso1([Fazer Login])
+        caso2([Gerenciar Ordens de Serviço - CRUD])
+        caso3([Gerenciar Equipamentos - CRUD])
+        caso4([Gerenciar Usuários])
+        caso5([Fazer Login])
+    end
+
+    Tecnico([Técnico de Manutenção])
+    Gerente([Gerente de Manutenção])
+    Admin([Adminitrador do Sistema])
+
+    Tecnico --> caso1
+    Tecnico --> caso3
+    Tecnico --> caso5
+
+    Gerente --> caso1
+    Gerente --> caso2
+    Gerente --> caso3
+    Gerente --> caso5
+
+    Admin --> caso1
+    Admin --> caso4
+    Admin --> caso5
+
+    caso1 -.-> caso2
+    caso1 -.-> caso3
+    caso1 -.-> caso4
+    caso1 -.-> caso5
