@@ -1,6 +1,6 @@
 import mongoose, { Document, Model, Schema } from "mongoose";
 
-export interface IEquipamentos extends Document{
+export interface IEquipamento extends Document{
     _id: string;
     modelo: string;
     marca: string;
@@ -9,7 +9,7 @@ export interface IEquipamentos extends Document{
     numSerie: string;
 }
 
-const EquipamentoSchema:Schema<IEquipamentos> = new Schema({
+const EquipamentoSchema:Schema<IEquipamento> = new Schema({
     modelo: {type: String, required: true},
     marca: {type: String, required: true},
     localizacao: {type: String, required: true},
@@ -19,6 +19,6 @@ const EquipamentoSchema:Schema<IEquipamentos> = new Schema({
     
 });
 
-const Equipamento: Model<IEquipamentos> = mongoose.models.Equipamento || mongoose.model<IEquipamentos>("Equipamentos", EquipamentoSchema);
+const Equipamento: Model<IEquipamento> = mongoose.models.Equipamento || mongoose.model<IEquipamento>("Equipamentos", EquipamentoSchema);
 
 export default Equipamento;

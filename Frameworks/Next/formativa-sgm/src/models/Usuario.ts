@@ -5,14 +5,16 @@ export interface IUsuario extends Document{
     _id: string;
     nome:string;
     email:string;
-    senha:string;
+    senha?:string; //permite que a senha retorne null
     funcao: string;
+    compareSenha(senhaUsuario: string):Promise<boolean>;
+    //devolve para o usuario apenas a booleana de comparação da senha
 }
 
 const UsuarioSchema:Schema<IUsuario> = new Schema({
     nome: {type: String, required: true,},
     email: {type: String, required: true, unique:true},
-    senha: {type: String, required: true},
+    senha: {type: String, required: true, select: false},
     funcao: {type: String, enum:["tecnico","gerente","admin"], required: true},
 });
 
@@ -34,7 +36,10 @@ UsuarioSchema.pre<IUsuario>('save', async function (next) {
 })
 
 //método para comparar senhas
-
+//quando o usuario for fazer login, vamos comparar a senha digitada e criptografada com a senha criptografada do banco
+UsuarioSchema.methods.compareSenha =  function (senhaUsuario: string): Promise<boolean> {
+    return bcrypt.compare(senhaUsuario, this.senha);
+}
 //toMap // FromMap
 const Usuario: Model<IUsuario> = mongoose.models.User || mongoose.model<IUsuario>("Usuario", UsuarioSchema);
 
