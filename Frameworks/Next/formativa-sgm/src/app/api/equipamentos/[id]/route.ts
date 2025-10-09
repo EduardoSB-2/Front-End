@@ -1,7 +1,5 @@
 //Rotas que Precisam do ID (PATCH ou PUT, GET (one), DELETE)
 
-
-
 import { deleteEquipamento, getOneEquipamento, updateEquipamento } from "@/controllers/EquipamentoController";
 import { NextRequest, NextResponse } from "next/server";
 
