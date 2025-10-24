@@ -1,5 +1,3 @@
-//script para criação de um usuário admin para o site
-
 import connectMongo from "@/services/mongodb"
 import Membro from "@/models/Membro";
 
@@ -11,8 +9,8 @@ export const criarAdmin = async () =>{
         const admin = new Membro({
             nome:"Administrador",
             email: adminEmail,
-            senha: "admin123",
-            funcao:"admin"
+            senha: "123456",
+            funcao:"bibliotecario"
         });
         await admin.save();
         console.log("Usuário Adm Criado!!");

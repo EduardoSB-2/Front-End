@@ -36,9 +36,6 @@ export default function DashboardPage(){
             return <DashboardAdmin/>;
         }else if(funcao === "gerente"){
             return <DashboardGerente/>;
-        }else if(funcao === "tecnico"){
-            return <DashboardTecnico/>;
-        }
     }
 
     // reactDOM
@@ -53,4 +50,5 @@ export default function DashboardPage(){
             </main>
         </div>
     );
+    }
 }

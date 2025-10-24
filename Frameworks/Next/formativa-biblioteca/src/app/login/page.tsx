@@ -1,20 +1,33 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
 
-    console.log("Tentando login com:", email, senha);
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, senha }),
+      });
 
-    if (email === "admin@admin.com" && senha === "123456") {
-      alert("Login realizado com sucesso!");
-      window.location.href = "/dashboards"; 
-    } else {
-      alert("Usuário ou senha incorretos.");
+      if (response.ok) {
+        router.push("/dashboards");
+      } else {
+        setError('Credenciais inválidas');
+      }
+    } catch {
+      setError('Erro ao fazer login');
     }
   };
 
@@ -36,7 +49,7 @@ export default function LoginPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
               className="w-full rounded-lg border border-zinc-300 dark:border-zinc-600 bg-zinc-50 dark:bg-zinc-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="exemplo@bistro.com"
+              placeholder="exemplo@biblioteca.com"
             />
           </div>
 
@@ -53,6 +66,8 @@ export default function LoginPage() {
               placeholder="********"
             />
           </div>
+
+          {error && <p className="text-red-500 text-sm">{error}</p>}
 
           <button
             type="submit"

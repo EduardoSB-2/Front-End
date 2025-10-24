@@ -12,12 +12,6 @@ O projeto consiste no desenvolvimento de um sistema de gerenciamento de bibliote
 - Membros (usuários finais)
 - Bibliotecário (Gerencia o cadastro dos membros e dos livros)
 
-## Levantamento de Requistos do Projeto
-
-- ### Requisitos Funcionais
-
-- ### Requisitos Não Funcionais
-
 ## Recursos do Projeto
 - ### Tecnológicos
     - Framework de Desenvolvimento Next/React
@@ -29,8 +23,6 @@ O projeto consiste no desenvolvimento de um sistema de gerenciamento de bibliote
 
 - ### Pessoal
     - Dev Tudo
-
-## Análise de Risco
 
 ## Diagramas
 
@@ -108,7 +100,7 @@ graph TD
 Detalha o passo a passo para realizar uma ação no sistema
 
 - Diagrama  de fluxo de login
-    - O membro acessa a tela de login
+    - O bibliotecario acessa a tela de login
     -Insere as credenciais
     - O sistema verifica as Credenciais
         - se sim: ger um JWT (Token) => Dashboard
@@ -126,6 +118,5 @@ graph TD
 
 ```
 
-### Prototipos
-
-## 
+## Link do Figma
+- https://www.figma.com/design/nmS5CuvbTelb2dc9mz6bzB/Untitled?node-id=0-1&t=W0B9yGUNuQurjyiq-1

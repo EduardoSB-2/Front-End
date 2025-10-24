@@ -11,7 +11,7 @@ const LivrosSchema:Schema<ILivros> = new Schema ({
     titulo:{type: String, required: true},
     autor:{type: String, required: true},
     ISBN:{ type: String, required: true, unique: true},
-    status:{type: String, enum: ["Disponível", "Emprestado"], default: "ativo"},
+    status:{type: String, enum: ["Disponível", "Emprestado"], default: "Disponível"},
 });
 
 const Livros: Model<ILivros> = mongoose.models.Livros || mongoose.model<ILivros>("Livros", LivrosSchema);
