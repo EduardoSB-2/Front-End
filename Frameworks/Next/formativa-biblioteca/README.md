@@ -37,22 +37,36 @@ Descrever o Comportamento das Entidades de um Projeto
         - Atributos: titulo, autor, ISBN, status
         - Métodos: CRUD
 
+    -Empréstimos (Loan/Empréstimos)
+        - Atributos: livroId, membroId, dataEmprestimo, dataDevolucaoPrevista, dataDevolucaoReal, status
+
 ```mermaid
 
 classDiagram
 
-    class Membro{
+    class Membro {
         +String id
         +String nome
         +CRUD()
     }
 
-    class Livros{
+    class Livros {
         +String titulo
         +String autor
         +String isbn
         +boolean status
         +CRUD()
+    }
+
+    class Emprestimo {
+        +ObjectId livroId
+        +ObjectId membroId
+        +Date dataEmprestimo
+        +Date dataDevolucaoPrevista
+        +Date dataDevolucaoReal
+        +String status
+        +registrarEmprestimo()
+        +registrarDevolucao()
     }
 
 ```
